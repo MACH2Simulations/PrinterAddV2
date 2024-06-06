@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ServiceModel;
+using System.Xml.Linq;
+using System.Printing;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Net;
+using System.Drawing.Printing;
 
 namespace PrinterAddV2
 {
@@ -16,7 +23,8 @@ namespace PrinterAddV2
         {
             InitializeComponent();
             string[] args = Environment.GetCommandLineArgs();
-            //StatusText.Text = args[3];
+            StatusText.Text = "Praseing Arguments";
+            
             Handle_Args(args);
 
         }
@@ -31,6 +39,7 @@ namespace PrinterAddV2
             string[] PrintersToAdd = { "Null" };
             string Server = "Null";
             int Tries = 0;
+            bool ShouldDel = false;
 
             foreach (var arg in Args)
             {
@@ -42,7 +51,6 @@ namespace PrinterAddV2
                 else if (Convert.ToString(arg).Contains("/s") || Convert.ToString(arg).Contains("/S"))
                 {
                     Server = Convert.ToString(arg).Remove(0, 3);
-                    StatusText.Text = Server;
                 }
                 else if (Convert.ToString(arg).Contains("/t") || Convert.ToString(arg).Contains("/T"))
                 {
@@ -55,10 +63,15 @@ namespace PrinterAddV2
                     PrintersToAdd = Printers.Split(' ');
 
                 }
+                else if (Convert.ToString(arg).Contains("/del") || Convert.ToString(arg).Contains("/DEL"))
+                {
+                    ShouldDel = true;
+                }
 
             }
 
-            Add_Printers(PrintersToAdd,Server,Tries);
+            Del_Printers(ShouldDel, PrintersToAdd, Server, Tries);
+            
 
 
 
@@ -83,13 +96,82 @@ namespace PrinterAddV2
 
         public string Add_Printers(string[] Args,string Server, int Tries = 5)
         {
-            StatusText.Text = Server + " " + Args[1];
+            int ProgressBarVals = 80 / Tries;
+            ProgressBarVals = ProgressBarVals / Args.Length;
+            String PrinterString = "null";
+            Console.WriteLine(Server);
+            PrintServer MyServer = new PrintServer("\\\\"+Server);
+
+
+
+            foreach (var arg in Args)
+            //PrinterString = "\\\\" + Server + "\\" + ;
+            PrinterString = Convert.ToString(arg);
+            {
+                for (int i = 0; i < Tries; i++)
+                {
+                 StatusText.Text = "Trying to add " + PrinterString + " Attempt " + i;
+                    PrintQueue MyQueue = new PrintQueue(MyServer, PrinterString);
+
+
+
+
+
+
+
+
+
+                        ProgressBarUpdate(ProgressBarVals);
+    
+                }
+
+            }
+
+
+
+
+          
+
 
 
             return "done";
         }
+        
+        
+        public string Del_Printers(bool ShouldDel, string[] PrintersToAdd, string Server, int Tries) {
+            ProgressBarUpdate(20);
+            StatusText.Text = "Should I Delete Printers" + Convert.ToString(ShouldDel);
+            if (ShouldDel)
+            {
+                StatusText.Text = "Deleteing Printers";
+                ProgressBarUpdate(10);
+                Process scriptProc = new Process();
+                scriptProc.StartInfo.FileName = @"cscript";
+                scriptProc.StartInfo.Arguments = "//B //Nologo C:\\Windows\\System32\\Printing_Admin_Scripts\\en-US\\prnmngr.vbs " + "-xc";
+                scriptProc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;  
+                scriptProc.Start();
+                scriptProc.WaitForExit();
+                scriptProc.Close();
+                ProgressBarUpdate(10);
+                Add_Printers(PrintersToAdd, Server, Tries);
+                return "done";
+            }
+            else {
+                StatusText.Text = "Not Deleteing, lets move on";
+                ProgressBarUpdate(20);
+                Add_Printers(PrintersToAdd, Server, Tries);
+                return "done";
+            }
+        }
 
+        public string ProgressBarUpdate(int Ammount)
+        {
+            MainProgressIndicator.Value = + Ammount;
+            MainProgressIndicator.Refresh();
 
+            return "Added";
+
+        }
 
 
 

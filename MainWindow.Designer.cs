@@ -1,5 +1,6 @@
 ﻿namespace PrinterAddV2
 {
+
     partial class MainWindow
     {
         /// <summary>
