@@ -100,7 +100,7 @@ namespace PrinterAddV2
             ProgressBarVals = ProgressBarVals / Args.Length;
             String PrinterString = "null";
             Console.WriteLine(Server);
-            PrintServer MyServer = new PrintServer("\\\\"+Server);
+            PrintServer MyServer = new PrintServer(@"\\"+Server);
 
 
 
@@ -111,17 +111,27 @@ namespace PrinterAddV2
                 for (int i = 0; i < Tries; i++)
                 {
                  StatusText.Text = "Trying to add " + PrinterString + " Attempt " + i;
+                    
+                    
+                    
+                    PrintQueueCollection myPrintQueues = MyServer.GetPrintQueues();
+                    String printQueueNames = "My Print Queues:\n\n";
+                    foreach (PrintQueue pq in myPrintQueues)
+                    {
+                        printQueueNames += "\t" + pq.Name + "\n";
+                    }
+                    Console.WriteLine(printQueueNames);
+                    Console.WriteLine("\nPress Return to continue.");
+                    Console.ReadLine();
+
+                    //TODO Actually make this work 
                     PrintQueue MyQueue = new PrintQueue(MyServer, PrinterString);
-
-
-
-
-
-
-
-
-
-                        ProgressBarUpdate(ProgressBarVals);
+                    Console.WriteLine(MyQueue.QueueDriver.Name);
+                    string Driver = MyQueue.QueueDriver.Name;
+                    String[] port = new String[] { "COM"+i+":" };
+                    PrintQueue printQueue = MyServer.InstallPrintQueue(MyQueue,Driver,port,"WinPrint");
+                    printQueue.Commit();
+                    ProgressBarUpdate(ProgressBarVals);
     
                 }
 
