@@ -1,32 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Management;
+using System.Threading;
 using System.Windows.Forms;
-using System.ServiceModel;
-using System.Xml.Linq;
-using System.Printing;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Net;
-using System.Drawing.Printing;
-using System.Printing.IndexedProperties;
 
 namespace PrinterAddV2
 {
     public partial class MainWindow : Form
     {
+        int sleep = 500;
+
         public MainWindow()
         {
             InitializeComponent();
-            string[] args = Environment.GetCommandLineArgs();
-            StatusText.Text = "Praseing Arguments";
-            
-            Handle_Args(args);
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
 
         }
 
@@ -34,20 +22,19 @@ namespace PrinterAddV2
         {
 
         }
-
-
-        public string Handle_Args(Array Args) {
+        public string Handle_Args(Array Args)
+        {
             string[] PrintersToAdd = { "Null" };
             string Server = "Null";
             int Tries = 0;
             bool ShouldDel = false;
+            bool Quite = false;
 
             foreach (var arg in Args)
             {
                 if (Convert.ToString(arg) == "/qn" || Convert.ToString(arg) == "/QN")
                 {
-                    this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-                    this.ShowInTaskbar = false;
+                    Quite = true;
                 }
                 else if (Convert.ToString(arg).Contains("/s") || Convert.ToString(arg).Contains("/S"))
                 {
@@ -56,151 +43,142 @@ namespace PrinterAddV2
                 else if (Convert.ToString(arg).Contains("/t") || Convert.ToString(arg).Contains("/T"))
                 {
                     Tries = int.Parse((Convert.ToString(arg).Remove(0, 3)));
-                    Console.WriteLine(Tries);
+                    //Console.WriteLine(Tries);
                 }
                 else if (Convert.ToString(arg).Contains("/p") || Convert.ToString(arg).Contains("/P"))
                 {
                     string Printers = Convert.ToString(arg).Remove(0, 3);
+                    //Console.WriteLine("Printers Passed in args " + Printers);
                     PrintersToAdd = Printers.Split(' ');
+                    //Console.WriteLine(PrintersToAdd[1]);
 
                 }
                 else if (Convert.ToString(arg).Contains("/del") || Convert.ToString(arg).Contains("/DEL"))
                 {
                     ShouldDel = true;
                 }
-
-            }
-
-            Del_Printers(ShouldDel, PrintersToAdd, Server, Tries);
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            return "done";
-
-        
-        }
-
-        public string Add_Printers(string[] Args,string Server, int Tries = 5)
-        {
-            int ProgressBarVals = 80 / Tries;
-            ProgressBarVals = ProgressBarVals / Args.Length;
-            String PrinterString = "null";
-            Console.WriteLine(Server);
-            PrintServer MyServer = new PrintServer(@"\\"+Server);
-
-
-
-            foreach (var arg in Args)
-            //PrinterString = "\\\\" + Server + "\\" + ;
-            PrinterString = Convert.ToString(arg);
-            {
-                for (int i = 0; i < Tries; i++)
+                if (!Quite)
                 {
-                 StatusText.Text = "Trying to add " + PrinterString + " Attempt " + i;
-                    
-                    
-                    
-                    PrintQueueCollection myPrintQueues = MyServer.GetPrintQueues();
-                    String printQueueNames = "My Print Queues:\n\n";
-                    foreach (PrintQueue pq in myPrintQueues)
-                    {
-                        printQueueNames += "\t" + pq.Name + "\n";
-                    }
-                    Console.WriteLine(printQueueNames);
-                    Console.WriteLine("\nPress Return to continue.");
-                    Console.ReadLine();
-
-                    //TODO Actually make this work 
-                    PrintQueue MyQueue = new PrintQueue(MyServer, PrinterString);
-                    Console.WriteLine(MyQueue.QueueDriver.Name);
-                    string Driver = MyQueue.QueueDriver.Name;
-                    String[] port = new String[] { "COM"+i+":" };
-
-                    PrintPropertyDictionary myPrintProperties = MyQueue.PropertiesCollection;
-                    PrintStringProperty theLocation = new PrintStringProperty("Location", "FollowMe");
-                    myPrintProperties.Remove("Location");
-                    myPrintProperties.Add("Location", theLocation);
-                    PrintQueue printQueue = MyServer.InstallPrintQueue(Convert.ToString(MyQueue),Driver,port,"WinPrint", myPrintProperties);
-                    printQueue.Commit();
-                    ProgressBarUpdate(ProgressBarVals);
-    
+                    this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+                    this.ShowInTaskbar = true;
+                }
+                else
+                {
+                    this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+                    this.ShowInTaskbar = false;
                 }
 
             }
 
+            Del_Printers(ShouldDel, PrintersToAdd, Server, Tries);
+            return "done";
 
 
+        }
 
-          
+        public string Add_Printers(string[] Args, string Server, int Tries = 5)
+        {
+            int ProgressBarVals = 80 / Tries;
+            //Console.WriteLine("Prog Bar Val " + ProgressBarVals);
+            ProgressBarVals = ProgressBarVals / Args.Count();
+            //Console.WriteLine("Prog Bar Val " + ProgressBarVals);
+            //Console.WriteLine(Args[0]);
+            String PrinterString = "null";
+            //Console.WriteLine(Server);
+            foreach (var arg in Args)
 
+            {
+                PrinterString = Convert.ToString(arg);
+                //Console.WriteLine("In For loop "+PrinterString);
+                //Console.WriteLine(PrinterString);
+                for (int i = 0; i < Tries; i++)
+                {
+                    //Console.WriteLine(i);
+                    ManagementClass classInstance =
+                    new ManagementClass("root\\CIMV2", "Win32_Printer", null);
+                    ManagementBaseObject inParams = classInstance.GetMethodParameters("AddPrinterConnection");
+                    inParams["Name"] = "\\\\" + Server + "\\" + PrinterString;
+                    ManagementBaseObject outParams = classInstance.InvokeMethod("AddPrinterConnection", inParams, null);
+                    int b = i + 1;
+                    StatusText.Text = "Trying to add \\\\" + Server + "\\" + PrinterString + " Attempt " + b;
+                    Thread.Sleep(sleep);
+                    ProgressBarUpdate(ProgressBarVals);
+                }
+            }
+            StatusText.Text = "Complete, Goodbye";
+            StatusText.Refresh();
+            //MainProgressIndicator.Value = 100;
+            MainProgressIndicator.Update();
 
-
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                Thread.Sleep(1000);
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                Thread.Sleep(1000);
+                // Console app
+                System.Environment.Exit(1);
+            }
             return "done";
         }
-        
-        
-        public string Del_Printers(bool ShouldDel, string[] PrintersToAdd, string Server, int Tries) {
-            ProgressBarUpdate(20);
+        public string Del_Printers(bool ShouldDel, string[] PrintersToAdd, string Server, int Tries)
+        {
+            //ProgressBarUpdate(20);
             StatusText.Text = "Should I Delete Printers" + Convert.ToString(ShouldDel);
             if (ShouldDel)
             {
                 StatusText.Text = "Deleteing Printers";
                 ProgressBarUpdate(10);
-                Process scriptProc = new Process();
-                scriptProc.StartInfo.FileName = @"cscript";
-                scriptProc.StartInfo.Arguments = "//B //Nologo C:\\Windows\\System32\\Printing_Admin_Scripts\\en-US\\prnmngr.vbs " + "-xc";
-                scriptProc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;  
-                scriptProc.Start();
-                scriptProc.WaitForExit();
-                scriptProc.Close();
-                ProgressBarUpdate(10);
+                ConnectionOptions options = new ConnectionOptions();
+                options.EnablePrivileges = true;
+                ManagementScope scope = new ManagementScope(ManagementPath.DefaultPath, options);
+                scope.Connect();
+                ManagementClass win32Printer = new ManagementClass("Win32_Printer");
+                ManagementObjectCollection printers = win32Printer.GetInstances();
+                foreach (ManagementObject printer in printers)
+                {
+                    try
+                    {
+                        printer.Delete();
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                        throw;
+                    }
+                }
+                Thread.Sleep(sleep);
                 Add_Printers(PrintersToAdd, Server, Tries);
                 return "done";
             }
-            else {
+            else
+            {
                 StatusText.Text = "Not Deleteing, lets move on";
                 ProgressBarUpdate(20);
+                Thread.Sleep(sleep);
                 Add_Printers(PrintersToAdd, Server, Tries);
                 return "done";
             }
         }
-
         public string ProgressBarUpdate(int Ammount)
         {
-            MainProgressIndicator.Value = + Ammount;
-            MainProgressIndicator.Refresh();
-
+            int NewAmmount = MainProgressIndicator.Value + Ammount;
+            //Console.WriteLine("New Ammount " + NewAmmount);
+            MainProgressIndicator.Value = +NewAmmount;
+            MainProgressIndicator.Update();
+            Thread.Sleep(100);
             return "Added";
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void MainWindow_Shown_1(object sender, EventArgs e)
+        {
+            //MessageBox.Show("You are in the Form.Shown event.");
+            string[] args = Environment.GetCommandLineArgs();
+            StatusText.Text = "Praseing Arguments";
+            StatusText.Refresh();
+            Thread.Sleep(sleep);
+            Handle_Args(args);
+        }
     }
 }

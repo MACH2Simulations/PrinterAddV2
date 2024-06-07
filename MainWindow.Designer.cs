@@ -61,6 +61,7 @@
             this.MinimumSize = new System.Drawing.Size(500, 120);
             this.Name = "MainWindow";
             this.Text = "Printer Adder V2";
+            this.Shown += new System.EventHandler(this.MainWindow_Shown_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
