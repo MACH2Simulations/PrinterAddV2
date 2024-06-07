@@ -32,7 +32,7 @@ namespace PrinterAddV2
 
             foreach (var arg in Args)
             {
-                if (Convert.ToString(arg) == "/qn" || Convert.ToString(arg) == "/QN")
+                if (Convert.ToString(arg) == "/qn" || Convert.ToString(arg) == "/QN" || Convert.ToString(arg) == "/Q" || Convert.ToString(arg) == "/q")
                 {
                     Quite = true;
                 }

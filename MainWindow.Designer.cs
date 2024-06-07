@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.MainProgressIndicator = new System.Windows.Forms.ProgressBar();
             this.StatusText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.StatusText);
             this.Controls.Add(this.MainProgressIndicator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(500, 120);
             this.MinimumSize = new System.Drawing.Size(500, 120);
             this.Name = "MainWindow";
