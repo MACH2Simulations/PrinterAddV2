@@ -9,7 +9,7 @@
   <Identity
     Name="18fbd0cf-0f87-45e0-8507-134ae7d68fe9"
     Publisher="CN=Chris"
-    Version="1.0.0.0" />
+    Version="1.0.2.0" />
 
   <Properties>
     <DisplayName>PrinterAddV2.Packaging</DisplayName>

@@ -28,6 +28,7 @@
     <StartupObject>PrinterAddV2.Program</StartupObject>
     <UseWPF>True</UseWPF>
     <Company>MACH 2 Simulations</Company>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>portable</DebugType>
