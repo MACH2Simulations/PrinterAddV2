@@ -7,12 +7,12 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="0b259805-b950-4ae2-b1ec-d1ca9ecc8a9c"
+    Name="18fbd0cf-0f87-45e0-8507-134ae7d68fe9"
     Publisher="CN=Chris"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>PrinterAddV2Packaging</DisplayName>
+    <DisplayName>PrinterAddV2.Packaging</DisplayName>
     <PublisherDisplayName>Chris</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
@@ -31,19 +31,14 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="PrinterAddV2"
-        Description="Printer Add V2"
+        DisplayName="PrinterAddV2.Packaging"
+        Description="PrinterAddV2.Packaging"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
         <uap:SplashScreen Image="Images\SplashScreen.png" />
-        <uap:InitialRotationPreference>
-          <uap:Rotation Preference="landscape"/></uap:InitialRotationPreference>
       </uap:VisualElements>
-      <Extensions>
-        <uap:Extension Category="windows.printTaskSettings"/>
-      </Extensions>
     </Application>
   </Applications>
 
