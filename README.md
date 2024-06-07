@@ -1,8 +1,6 @@
 # PrinterAddV2  
 
-||||||
-|-|-|-|-|-|-|
-| ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/mach2simulations/PrinterAddV2/master) | ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/mach2simulations/PrinterAddV2/latest/total) | ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/mach2simulations/PrinterAddV2) | ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/mach2simulations/PrinterAddV2) | ![GitHub Release](https://img.shields.io/github/v/release/mach2simulations/PrinterAddV2) | [  Download](https://github.com/MACH2Simulations/PrinterAddV2/releases/latest) |  
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/mach2simulations/PrinterAddV2/master) ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/mach2simulations/PrinterAddV2/latest/total) ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/mach2simulations/PrinterAddV2) ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/mach2simulations/PrinterAddV2) ![GitHub Release](https://img.shields.io/github/v/release/mach2simulations/PrinterAddV2) [  Download](https://github.com/MACH2Simulations/PrinterAddV2/releases/latest)  
 
 
 > PrinterAddV2.exe is a command line Click to Run file that will programmatically readd printers served from a print server to a set value!  
