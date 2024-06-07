@@ -14,6 +14,7 @@ using System.Printing;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Net;
 using System.Drawing.Printing;
+using System.Printing.IndexedProperties;
 
 namespace PrinterAddV2
 {
@@ -129,7 +130,12 @@ namespace PrinterAddV2
                     Console.WriteLine(MyQueue.QueueDriver.Name);
                     string Driver = MyQueue.QueueDriver.Name;
                     String[] port = new String[] { "COM"+i+":" };
-                    PrintQueue printQueue = MyServer.InstallPrintQueue(MyQueue,Driver,port,"WinPrint");
+
+                    PrintPropertyDictionary myPrintProperties = MyQueue.PropertiesCollection;
+                    PrintStringProperty theLocation = new PrintStringProperty("Location", "FollowMe");
+                    myPrintProperties.Remove("Location");
+                    myPrintProperties.Add("Location", theLocation);
+                    PrintQueue printQueue = MyServer.InstallPrintQueue(Convert.ToString(MyQueue),Driver,port,"WinPrint", myPrintProperties);
                     printQueue.Commit();
                     ProgressBarUpdate(ProgressBarVals);
     
