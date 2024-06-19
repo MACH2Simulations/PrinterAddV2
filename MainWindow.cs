@@ -1,6 +1,8 @@
-﻿using System;
+﻿﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Management;
+using System.Net.Quic;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -26,13 +28,19 @@ namespace PrinterAddV2
         {
             string[] PrintersToAdd = { "Null" };
             string Server = "Null";
-            int Tries = 0;
+            int Tries = 5;
             bool ShouldDel = false;
             bool Quite = false;
+            bool DelOnly = false;
 
             foreach (var arg in Args)
             {
-                if (Convert.ToString(arg) == "/qn" || Convert.ToString(arg) == "/QN" || Convert.ToString(arg) == "/Q" || Convert.ToString(arg) == "/q")
+                if (Convert.ToString(arg) == "/delonly" || Convert.ToString(arg) == "/DELONLY" || Convert.ToString(arg) == "/DelOnly")
+                {
+                    DelOnly = true;
+                    Del_Printers(true, PrintersToAdd, "Null", 5, DelOnly);
+                }
+                else if (Convert.ToString(arg) == "/qn" || Convert.ToString(arg) == "/QN" || Convert.ToString(arg) == "/Q" || Convert.ToString(arg) == "/q")
                 {
                     Quite = true;
                 }
@@ -57,22 +65,47 @@ namespace PrinterAddV2
                 {
                     ShouldDel = true;
                 }
-                if (!Quite)
+                else if (Convert.ToString(arg).Contains("/dark") || Convert.ToString(arg).Contains("/DARK") || Convert.ToString(arg).Contains("/DM") || Convert.ToString(arg).Contains("/dm"))
                 {
+                    //Temp for testing
+                    this.BackColor = Color.FromArgb(30, 30, 30);
+                    MainProgressIndicator.BackColor = Color.White;
+                    ProgressBarUpdate(20);
+
+                    
+
                     this.WindowState = System.Windows.Forms.FormWindowState.Normal;
                     this.ShowInTaskbar = true;
-                }
-                else
-                {
-                    this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-                    this.ShowInTaskbar = false;
-                }
+                    
+                    StatusText.Text = "Dark Mode";
+                    
+                    StatusText.BackColor = Color.FromArgb(30, 30, 30);
+                    StatusText.ForeColor = Color.FromArgb(255, 255, 255);
+                    
 
+
+                    StatusText.Refresh();
+                    StatusText.Text = "Dark Mode";
+                    StatusText.Text = "Dark Mode";
+
+                }
             }
+                
+                
+                if (!Quite)
+                    {
+                        this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+                        this.ShowInTaskbar = true;
+                    }
+                    else
+                    {
+                        this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+                        this.ShowInTaskbar = false;
+                    }
 
-            Del_Printers(ShouldDel, PrintersToAdd, Server, Tries);
-            return "done";
-
+            
+            Del_Printers(ShouldDel, PrintersToAdd, Server, Tries, DelOnly);
+            return "Done";
 
         }
 
@@ -110,20 +143,11 @@ namespace PrinterAddV2
             //MainProgressIndicator.Value = 100;
             MainProgressIndicator.Update();
 
-            if (System.Windows.Forms.Application.MessageLoop)
-            {
-                Thread.Sleep(1000);
-                System.Windows.Forms.Application.Exit();
-            }
-            else
-            {
-                Thread.Sleep(1000);
-                // Console app
-                System.Environment.Exit(1);
-            }
+            Quit();
+
             return "done";
         }
-        public string Del_Printers(bool ShouldDel, string[] PrintersToAdd, string Server, int Tries)
+        public string Del_Printers(bool ShouldDel, string[] PrintersToAdd, string Server, int Tries,bool DelOnly)
         {
             //ProgressBarUpdate(20);
             StatusText.Text = "Should I Delete Printers" + Convert.ToString(ShouldDel);
@@ -150,7 +174,20 @@ namespace PrinterAddV2
                     }
                 }
                 Thread.Sleep(sleep);
-                Add_Printers(PrintersToAdd, Server, Tries);
+
+                if (DelOnly)
+                {
+                    MainProgressIndicator.Value = 100;
+                    MainProgressIndicator.Update();
+                    Quit();
+
+                }
+                else { 
+                    Add_Printers(PrintersToAdd, Server, Tries);
+                }
+                
+
+
                 return "done";
             }
             else
@@ -179,6 +216,23 @@ namespace PrinterAddV2
             StatusText.Refresh();
             Thread.Sleep(sleep);
             Handle_Args(args);
+        }
+
+        public string Quit()
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                Thread.Sleep(1000);
+                System.Windows.Forms.Application.Exit();
+                return " ";
+            }
+            else
+            {
+                Thread.Sleep(1000);
+                // Console app
+                System.Environment.Exit(1);
+                return " ";
+            }
         }
     }
 }
