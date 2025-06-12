@@ -50,6 +50,6 @@ jobs:
 
     - name: Commit Changelog
       run: |
-        git add 'content/docs/CHANGELOG.md'
+        git add 'CHANGELOG.md'
         git commit -m "chore: :robot: changelog file generated" || echo "No changes to commit"
         git push
