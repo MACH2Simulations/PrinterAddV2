@@ -138,8 +138,12 @@ namespace PrinterAddV2
                     ProgressBarUpdate(ProgressBarVals);
                 }
             }
+            /// <summary>
+            /// /ADD AWAIT HERE
+            /// </summary>
             StatusText.Text = "Complete, Goodbye";
             StatusText.Refresh();
+            Thread.Sleep(sleep);
             //MainProgressIndicator.Value = 100;
             MainProgressIndicator.Update();
 

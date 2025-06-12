@@ -30,42 +30,45 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.MainProgressIndicator = new System.Windows.Forms.ProgressBar();
-            this.StatusText = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            MainProgressIndicator = new System.Windows.Forms.ProgressBar();
+            StatusText = new System.Windows.Forms.TextBox();
+            SuspendLayout();
             // 
             // MainProgressIndicator
             // 
-            this.MainProgressIndicator.Location = new System.Drawing.Point(13, 12);
-            this.MainProgressIndicator.Name = "MainProgressIndicator";
-            this.MainProgressIndicator.Size = new System.Drawing.Size(459, 23);
-            this.MainProgressIndicator.TabIndex = 0;
-            this.MainProgressIndicator.Click += new System.EventHandler(this.MainProgressIndicator_Click);
+            MainProgressIndicator.Location = new System.Drawing.Point(15, 14);
+            MainProgressIndicator.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MainProgressIndicator.Name = "MainProgressIndicator";
+            MainProgressIndicator.Size = new System.Drawing.Size(536, 27);
+            MainProgressIndicator.TabIndex = 0;
+            MainProgressIndicator.Click += MainProgressIndicator_Click;
             // 
             // StatusText
             // 
-            this.StatusText.Enabled = false;
-            this.StatusText.Location = new System.Drawing.Point(12, 49);
-            this.StatusText.Name = "StatusText";
-            this.StatusText.Size = new System.Drawing.Size(457, 20);
-            this.StatusText.TabIndex = 1;
+            StatusText.Enabled = false;
+            StatusText.Location = new System.Drawing.Point(14, 57);
+            StatusText.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            StatusText.Name = "StatusText";
+            StatusText.Size = new System.Drawing.Size(538, 23);
+            StatusText.TabIndex = 1;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 81);
-            this.ControlBox = false;
-            this.Controls.Add(this.StatusText);
-            this.Controls.Add(this.MainProgressIndicator);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(500, 120);
-            this.MinimumSize = new System.Drawing.Size(500, 120);
-            this.Name = "MainWindow";
-            this.Text = "Printer Adder V2";
-            this.Shown += new System.EventHandler(this.MainWindow_Shown_1);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(565, 93);
+            ControlBox = false;
+            Controls.Add(StatusText);
+            Controls.Add(MainProgressIndicator);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximumSize = new System.Drawing.Size(581, 132);
+            MinimumSize = new System.Drawing.Size(581, 132);
+            Name = "MainWindow";
+            Text = "Printer Adder V2";
+            Shown += MainWindow_Shown_1;
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
