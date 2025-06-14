@@ -26,15 +26,27 @@
     <ApplicationIcon>icons8-print-100.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup>
     <StartupObject>PrinterAddV2.Program</StartupObject>
-    <UseWPF>True</UseWPF>
+    <UseWPF>False</UseWPF>
     <Company>MACH 2 Simulations</Company>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PlatformTarget>x64</PlatformTarget>
     <Nullable>disable</Nullable>
-    <Version>1.0.5</Version>
+    <Version>1.0.0.5</Version>
     <PackageProjectUrl>https://docs.m2s.uk/docs/printeradder/</PackageProjectUrl>
-    <PackageIcon></PackageIcon>
+    <PackageIcon>icons8-print-100-9.png</PackageIcon>
+    <Copyright>MACH 2 Simulations LTD 2025</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <SignAssembly>False</SignAssembly>
+    <Title>Machs Printer Adder V2</Title>
+    <Description>PrinterAddV2.exe is a command line Click to Run file that will programmatically readd printers served from a print server</Description>
+    <RepositoryUrl>https://github.com/MACH2Simulations/PrinterAddV2</RepositoryUrl>
+    <FileVersion>1.0.0.5</FileVersion>
+    <AssemblyVersion>1.0.0.5</AssemblyVersion>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>portable</DebugType>
@@ -76,6 +88,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Update="icons8-print-100-1,icons8-print-100-2,icons8-print-100-3.zip">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="icons8-print-100-9.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="icons8-print-100.ico">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -83,6 +103,10 @@
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 </Project>
