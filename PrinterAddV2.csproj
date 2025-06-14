@@ -21,6 +21,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <Platforms>AnyCPU;x64</Platforms>
+	<EnableWindowsTargeting>true</EnableWindowsTargeting>	
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icons8-print-100.ico</ApplicationIcon>
