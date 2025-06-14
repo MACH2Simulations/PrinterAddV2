@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Chore
+- :robot: changelog file generated [`a21357f`](https://github.com/MACH2Simulations/PrinterAddV2/commit/a21357f)
+
 ### Other
+- Version Bump [`2985f32`](https://github.com/MACH2Simulations/PrinterAddV2/commit/2985f32)
 - Update main.yml [`a14434b`](https://github.com/MACH2Simulations/PrinterAddV2/commit/a14434b)
 - Update main.yml [`a376c32`](https://github.com/MACH2Simulations/PrinterAddV2/commit/a376c32)
 - Add Changelog Robot [`20d5b8a`](https://github.com/MACH2Simulations/PrinterAddV2/commit/20d5b8a)
@@ -16,6 +20,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - readme update [`ceb7096`](https://github.com/MACH2Simulations/PrinterAddV2/commit/ceb7096)
 
 ## 1.0 (2024-06-07)
+
+## 0.0.3 (2025-06-12)
+
+### Chore
+- :robot: changelog file generated [`a21357f`](https://github.com/MACH2Simulations/PrinterAddV2/commit/a21357f)
+
+### Other
+- Version Bump [`2985f32`](https://github.com/MACH2Simulations/PrinterAddV2/commit/2985f32)
 
 ## 0.0.2 (2025-06-12)
 
