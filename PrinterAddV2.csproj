@@ -48,6 +48,7 @@
     <FileVersion>1.0.0.5</FileVersion>
     <AssemblyVersion>1.0.0.5</AssemblyVersion>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>portable</DebugType>
@@ -89,6 +90,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Update="docs\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="icons8-print-100-1,icons8-print-100-2,icons8-print-100-3.zip">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -98,6 +103,14 @@
       <PackagePath>\</PackagePath>
     </None>
     <None Update="icons8-print-100.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="icons\icons8-print-100-8.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="icons\icons8-print-100-9.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
