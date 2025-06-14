@@ -1,6 +1,7 @@
 name: on-commit
 on:
   push:
+    branches: [ "master" ]
     paths:
       - 'action.yml'
       - 'generate_changelog_gh.sh'
