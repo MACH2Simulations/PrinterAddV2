@@ -6,10 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Other
+- Automate CL [`22f82c4`](https://github.com/MACH2Simulations/PrinterAddV2/commit/22f82c4)
+
+## 1.0.0.5 (2025-06-14)
+
 ### Chore
+- :robot: changelog file generated [`0c364f9`](https://github.com/MACH2Simulations/PrinterAddV2/commit/0c364f9)
 - :robot: changelog file generated [`a21357f`](https://github.com/MACH2Simulations/PrinterAddV2/commit/a21357f)
 
 ### Other
+- Merge remote-tracking branch 'origin/master' [`1ecc8a2`](https://github.com/MACH2Simulations/PrinterAddV2/commit/1ecc8a2)
+- Clean [`9b1c61d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/9b1c61d)
+- Sill Trying to get autobuilds working [`561c211`](https://github.com/MACH2Simulations/PrinterAddV2/commit/561c211)
+- Update dotnet.yml [`1494e0b`](https://github.com/MACH2Simulations/PrinterAddV2/commit/1494e0b)
+- Merge remote-tracking branch 'origin/master' [`11c6416`](https://github.com/MACH2Simulations/PrinterAddV2/commit/11c6416)
+- Trying to get GIT Auto builds working [`72aa3f5`](https://github.com/MACH2Simulations/PrinterAddV2/commit/72aa3f5)
+- Update dotnet.yml [`3705fe8`](https://github.com/MACH2Simulations/PrinterAddV2/commit/3705fe8)
+- Update dotnet.yml [`0c7ce14`](https://github.com/MACH2Simulations/PrinterAddV2/commit/0c7ce14)
+- Update dotnet.yml [`15f10e6`](https://github.com/MACH2Simulations/PrinterAddV2/commit/15f10e6)
+- Update dotnet.yml [`c7d2958`](https://github.com/MACH2Simulations/PrinterAddV2/commit/c7d2958)
+- Merge branch 'master' of https://github.com/MACH2Simulations/PrinterAddV2 [`9172460`](https://github.com/MACH2Simulations/PrinterAddV2/commit/9172460)
+- Icons Version bump [`fd3c201`](https://github.com/MACH2Simulations/PrinterAddV2/commit/fd3c201)
 - Version Bump [`2985f32`](https://github.com/MACH2Simulations/PrinterAddV2/commit/2985f32)
 - Update main.yml [`a14434b`](https://github.com/MACH2Simulations/PrinterAddV2/commit/a14434b)
 - Update main.yml [`a376c32`](https://github.com/MACH2Simulations/PrinterAddV2/commit/a376c32)
@@ -20,6 +38,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - readme update [`ceb7096`](https://github.com/MACH2Simulations/PrinterAddV2/commit/ceb7096)
 
 ## 1.0 (2024-06-07)
+
+## 0.0.5 (2025-06-14)
+
+### Other
+- Automate CL [`22f82c4`](https://github.com/MACH2Simulations/PrinterAddV2/commit/22f82c4)
+
+## 0.0.4 (2025-06-14)
+
+### Chore
+- :robot: changelog file generated [`0c364f9`](https://github.com/MACH2Simulations/PrinterAddV2/commit/0c364f9)
+
+### Other
+- Merge remote-tracking branch 'origin/master' [`1ecc8a2`](https://github.com/MACH2Simulations/PrinterAddV2/commit/1ecc8a2)
+- Clean [`9b1c61d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/9b1c61d)
+- Sill Trying to get autobuilds working [`561c211`](https://github.com/MACH2Simulations/PrinterAddV2/commit/561c211)
+- Update dotnet.yml [`1494e0b`](https://github.com/MACH2Simulations/PrinterAddV2/commit/1494e0b)
+- Merge remote-tracking branch 'origin/master' [`11c6416`](https://github.com/MACH2Simulations/PrinterAddV2/commit/11c6416)
+- Trying to get GIT Auto builds working [`72aa3f5`](https://github.com/MACH2Simulations/PrinterAddV2/commit/72aa3f5)
+- Update dotnet.yml [`3705fe8`](https://github.com/MACH2Simulations/PrinterAddV2/commit/3705fe8)
+- Update dotnet.yml [`0c7ce14`](https://github.com/MACH2Simulations/PrinterAddV2/commit/0c7ce14)
+- Update dotnet.yml [`15f10e6`](https://github.com/MACH2Simulations/PrinterAddV2/commit/15f10e6)
+- Update dotnet.yml [`c7d2958`](https://github.com/MACH2Simulations/PrinterAddV2/commit/c7d2958)
+- Merge branch 'master' of https://github.com/MACH2Simulations/PrinterAddV2 [`9172460`](https://github.com/MACH2Simulations/PrinterAddV2/commit/9172460)
+- Icons Version bump [`fd3c201`](https://github.com/MACH2Simulations/PrinterAddV2/commit/fd3c201)
 
 ## 0.0.3 (2025-06-12)
 
