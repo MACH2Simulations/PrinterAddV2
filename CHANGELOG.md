@@ -6,16 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased changes
 
+### Chore
+- :robot: changelog file generated [`acccad1`](https://github.com/MACH2Simulations/PrinterAddV2/commit/acccad1)
+
 ### Other
+- Revert to 1.0 EXE, Docs Update and bump [`3dbcf9d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/3dbcf9d)
 - Automate CL [`22f82c4`](https://github.com/MACH2Simulations/PrinterAddV2/commit/22f82c4)
 
 ## 1.0.0.5 (2025-06-14)
 
+## 1.0.0.1 (2025-06-14)
+
 ### Chore
+- :robot: changelog file generated [`acccad1`](https://github.com/MACH2Simulations/PrinterAddV2/commit/acccad1)
 - :robot: changelog file generated [`0c364f9`](https://github.com/MACH2Simulations/PrinterAddV2/commit/0c364f9)
 - :robot: changelog file generated [`a21357f`](https://github.com/MACH2Simulations/PrinterAddV2/commit/a21357f)
 
 ### Other
+- Automate CL [`22f82c4`](https://github.com/MACH2Simulations/PrinterAddV2/commit/22f82c4)
 - Merge remote-tracking branch 'origin/master' [`1ecc8a2`](https://github.com/MACH2Simulations/PrinterAddV2/commit/1ecc8a2)
 - Clean [`9b1c61d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/9b1c61d)
 - Sill Trying to get autobuilds working [`561c211`](https://github.com/MACH2Simulations/PrinterAddV2/commit/561c211)
@@ -38,6 +46,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - readme update [`ceb7096`](https://github.com/MACH2Simulations/PrinterAddV2/commit/ceb7096)
 
 ## 1.0 (2024-06-07)
+
+## 0.0.6 (2025-07-09)
+
+### Chore
+- :robot: changelog file generated [`acccad1`](https://github.com/MACH2Simulations/PrinterAddV2/commit/acccad1)
+
+### Other
+- Revert to 1.0 EXE, Docs Update and bump [`3dbcf9d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/3dbcf9d)
 
 ## 0.0.5 (2025-06-14)
 
