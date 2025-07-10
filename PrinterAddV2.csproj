@@ -17,11 +17,12 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <Platforms>AnyCPU;x64</Platforms>
-	<EnableWindowsTargeting>true</EnableWindowsTargeting>	
+	<EnableWindowsTargeting>true</EnableWindowsTargeting>
+	<Configurations>Debug;Release;2</Configurations>	
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icons8-print-100.ico</ApplicationIcon>
@@ -36,31 +37,38 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PlatformTarget>x64</PlatformTarget>
     <Nullable>disable</Nullable>
-    <Version>1.0.0.5</Version>
+    <Version>1.2.0.5</Version>
     <PackageProjectUrl>https://docs.m2s.uk/docs/printeradder/</PackageProjectUrl>
     <PackageIcon>icons8-print-100-9.png</PackageIcon>
-    <Copyright>MACH 2 Simulations LTD 2025</Copyright>
+    <Copyright>MACH 2 Simulations LTD 2024 - 2025</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <SignAssembly>False</SignAssembly>
     <Title>Machs Printer Adder V2</Title>
     <Description>PrinterAddV2.exe is a command line Click to Run file that will programmatically readd printers served from a print server</Description>
     <RepositoryUrl>https://github.com/MACH2Simulations/PrinterAddV2</RepositoryUrl>
-    <FileVersion>1.0.0.5</FileVersion>
-    <AssemblyVersion>1.0.0.5</AssemblyVersion>
+    <FileVersion>1.2.0.5</FileVersion>
+    <AssemblyVersion>1.2.0.5</AssemblyVersion>
     <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
     <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>portable</DebugType>
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <DebugType>portable</DebugType>
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>portable</DebugType>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='2|AnyCPU'">
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <DebugType>portable</DebugType>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='2|x64'">
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -79,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.CodeDom" Version="9.0.7" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="System.Management" Version="9.0.7" />
   </ItemGroup>
