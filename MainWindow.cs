@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Linq;
 using System.Management;
-using System.Net.Quic;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -72,16 +71,16 @@ namespace PrinterAddV2
                     MainProgressIndicator.BackColor = Color.White;
                     ProgressBarUpdate(20);
 
-                    
+
 
                     this.WindowState = System.Windows.Forms.FormWindowState.Normal;
                     this.ShowInTaskbar = true;
-                    
+
                     StatusText.Text = "Dark Mode";
-                    
+
                     StatusText.BackColor = Color.FromArgb(30, 30, 30);
                     StatusText.ForeColor = Color.FromArgb(255, 255, 255);
-                    
+
 
 
                     StatusText.Refresh();
@@ -90,20 +89,20 @@ namespace PrinterAddV2
 
                 }
             }
-                
-                
-                if (!Quite)
-                    {
-                        this.WindowState = System.Windows.Forms.FormWindowState.Normal;
-                        this.ShowInTaskbar = true;
-                    }
-                    else
-                    {
-                        this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-                        this.ShowInTaskbar = false;
-                    }
 
-            
+
+            if (!Quite)
+            {
+                this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+            }
+            else
+            {
+                this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+                this.ShowInTaskbar = false;
+            }
+
+
             Del_Printers(ShouldDel, PrintersToAdd, Server, Tries, DelOnly);
             return "Done";
 
@@ -138,8 +137,12 @@ namespace PrinterAddV2
                     ProgressBarUpdate(ProgressBarVals);
                 }
             }
+            /// <summary>
+            /// /ADD AWAIT HERE
+            /// </summary>
             StatusText.Text = "Complete, Goodbye";
             StatusText.Refresh();
+            Thread.Sleep(sleep);
             //MainProgressIndicator.Value = 100;
             MainProgressIndicator.Update();
 
@@ -147,7 +150,7 @@ namespace PrinterAddV2
 
             return "done";
         }
-        public string Del_Printers(bool ShouldDel, string[] PrintersToAdd, string Server, int Tries,bool DelOnly)
+        public string Del_Printers(bool ShouldDel, string[] PrintersToAdd, string Server, int Tries, bool DelOnly)
         {
             //ProgressBarUpdate(20);
             StatusText.Text = "Should I Delete Printers" + Convert.ToString(ShouldDel);
@@ -182,10 +185,11 @@ namespace PrinterAddV2
                     Quit();
 
                 }
-                else { 
+                else
+                {
                     Add_Printers(PrintersToAdd, Server, Tries);
                 }
-                
+
 
 
                 return "done";
