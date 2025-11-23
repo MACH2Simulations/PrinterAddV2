@@ -176,7 +176,7 @@ namespace PrinterAddV2
                         throw;
                     }
                 }
-                Thread.Sleep(sleep);
+                Thread.Sleep(3000);
 
                 if (DelOnly)
                 {

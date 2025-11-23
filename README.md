@@ -27,20 +27,5 @@ PrinterAddV2.exe /qn /del "/s m2s-print1" "/p Office-Mono Office-Colour Receptio
 
 ## Change Log  
 
-### 1.1  
-
-```text
-Added Del Only  
-Started to add dark mode  
-```  
-
-### 1.0 - Initial Build    
-
-```text
-First Working Build
-Can Deploy
-Can Delete
-Added Extra args for Quite 
-
-```
+https://docs.m2s.uk/docs/printeradder/
 
