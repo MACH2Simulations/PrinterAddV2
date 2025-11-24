@@ -14,7 +14,7 @@ namespace PrinterAddV2
         public MainWindow()
         {
             InitializeComponent();
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
 
         }
@@ -34,41 +34,43 @@ namespace PrinterAddV2
 
             foreach (var arg in Args)
             {
-                if (Convert.ToString(arg) == "/delonly" || Convert.ToString(arg) == "/DELONLY" || Convert.ToString(arg) == "/DelOnly")
+                if (arg.ToString() == "/delonly" || arg.ToString() == "/DELONLY" || arg.ToString() == "/DelOnly")
                 {
                     DelOnly = true;
-                    Del_Printers(true, PrintersToAdd, "Null", 5, DelOnly);
+               //     Del_Printers(true, PrintersToAdd, "Null", 5, DelOnly);
                 }
-                else if (Convert.ToString(arg) == "/qn" || Convert.ToString(arg) == "/QN" || Convert.ToString(arg) == "/Q" || Convert.ToString(arg) == "/q")
+                else if (arg.ToString() == "/qn" || arg.ToString() == "/QN" || arg.ToString() == "/Q" || arg.ToString() == "/q")
                 {
                     Quite = true;
                 }
-                else if (Convert.ToString(arg).Contains("/s") || Convert.ToString(arg).Contains("/S"))
+                else if (arg.ToString().Contains("/s") || arg.ToString().Contains("/S"))
                 {
-                    Server = Convert.ToString(arg).Remove(0, 3);
+                    Server = arg.ToString().Remove(0, 3);
                 }
-                else if (Convert.ToString(arg).Contains("/t") || Convert.ToString(arg).Contains("/T"))
+                else if (arg.ToString().Contains("/t") || arg.ToString().Contains("/T"))
                 {
-                    Tries = int.Parse((Convert.ToString(arg).Remove(0, 3)));
+                    Tries = Convert.ToInt32((arg.ToString()).Remove(0, 3));
                     //Console.WriteLine(Tries);
                 }
-                else if (Convert.ToString(arg).Contains("/p") || Convert.ToString(arg).Contains("/P"))
+                else if (arg.ToString().Contains("/p") || arg.ToString().Contains("/P"))
                 {
-                    string Printers = Convert.ToString(arg).Remove(0, 3);
+                    string Printers = arg.ToString().Remove(0, 3);
                     //Console.WriteLine("Printers Passed in args " + Printers);
                     PrintersToAdd = Printers.Split(' ');
                     //Console.WriteLine(PrintersToAdd[1]);
 
                 }
-                else if (Convert.ToString(arg).Contains("/del") || Convert.ToString(arg).Contains("/DEL"))
+                else if (arg.ToString().Contains("/del") || arg.ToString().Contains("/DEL"))
                 {
                     ShouldDel = true;
                 }
-                else if (Convert.ToString(arg).Contains("/dark") || Convert.ToString(arg).Contains("/DARK") || Convert.ToString(arg).Contains("/DM") || Convert.ToString(arg).Contains("/dm"))
+                else if (arg.ToString().Contains("/dark") || arg.ToString().Contains("/DARK") || arg.ToString().Contains("/DM") || arg.ToString().Contains("/dm"))
                 {
                     //Temp for testing
                     this.BackColor = Color.FromArgb(30, 30, 30);
+#pragma warning disable CA1416 // Validate platform compatibility
                     MainProgressIndicator.BackColor = Color.White;
+#pragma warning restore CA1416 // Validate platform compatibility
                     ProgressBarUpdate(20);
 
 
@@ -103,7 +105,7 @@ namespace PrinterAddV2
             }
 
 
-            Del_Printers(ShouldDel, PrintersToAdd, Server, Tries, DelOnly);
+            //Del_Printers(ShouldDel, PrintersToAdd, Server, Tries, DelOnly);
             return "Done";
 
         }
