@@ -21,21 +21,47 @@ jobs:
         os: [windows-latest]
 
     steps:
+    
     - uses: actions/checkout@v3
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
-
     - name: Install dependencies
       run: dotnet restore
-
     - name: Build
       run: dotnet build --configuration Release
     - name: Uploading artifacts
       uses: actions/upload-artifact@v4
+      id: artifact-upload-step
       with:
-        name: MachsPrintAdderV2_
+        name: MACHSPrintStatusTool
         path: bin/Release/net10.0-windows10.0.26100.0
         overwrite: true
         if-no-files-found: error
+    - name: Output artifact ID
+      run:  echo 'Artifact ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'
+    - name: Bump version and push tag
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v6.2
+      with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}   
+    - name: Zip Files
+      uses: vimtor/action-zip@v1.2
+      with:
+         files: bin/Release/net10.0-windows10.0.26100.0
+         dest: out/MACHSPrintStatusTool_${{ steps.tag_version.outputs.new_tag }}.zip
+       
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      #if: startsWith(github.ref, 'refs/tags/')
+      with:
+    # Identify if this is a pre release by checking if the tag name contains -rc, -b, -a
+        #prerelease: ${{ contains(github.ref, '-rc') || contains(github.ref, '-b') || contains(github.ref, '-a') }}
+        files: out/MACHSPrintStatusTool_${{ steps.tag_version.outputs.new_tag }}.zip
+        tag_name: ${{ steps.tag_version.outputs.new_tag }}
+        name: Release ${{ steps.tag_version.outputs.new_tag }}
+        body: ${{ steps.tag_version.outputs.changelog }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
