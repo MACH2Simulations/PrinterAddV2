@@ -1,8 +1,21 @@
 # Changelog
-BUMP
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+## Unreleased changes
+
+### Chore
+- :robot: changelog file generated [`57ea38c`](https://github.com/MACH2Simulations/PrinterAddV2/commit/57ea38c)
+
+### Other
+- Create changelog.yml [`429d441`](https://github.com/MACH2Simulations/PrinterAddV2/commit/429d441)
+- Update dotnet.yml [`414f3a4`](https://github.com/MACH2Simulations/PrinterAddV2/commit/414f3a4)
+- .net and versions bump [`edca7b5`](https://github.com/MACH2Simulations/PrinterAddV2/commit/edca7b5)
+- .net and version bump [`f87b222`](https://github.com/MACH2Simulations/PrinterAddV2/commit/f87b222)
+- Bump To Force Build attempt [`1a95dd8`](https://github.com/MACH2Simulations/PrinterAddV2/commit/1a95dd8)
+- Update .NET workflow for branch and version changes [`cf70883`](https://github.com/MACH2Simulations/PrinterAddV2/commit/cf70883)
 
 ## 1.2.0.5 (2025-07-10)
 
