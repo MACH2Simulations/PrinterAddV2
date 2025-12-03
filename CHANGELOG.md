@@ -7,9 +7,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased changes
 
 ### Chore
+- :robot: changelog file generated [`5f469f5`](https://github.com/MACH2Simulations/PrinterAddV2/commit/5f469f5)
+- :robot: changelog file generated [`bfa4db7`](https://github.com/MACH2Simulations/PrinterAddV2/commit/bfa4db7)
+- :robot: changelog file generated [`57ea38c`](https://github.com/MACH2Simulations/PrinterAddV2/commit/57ea38c)
+
+### Other
+- Create changelog.yml [`429d441`](https://github.com/MACH2Simulations/PrinterAddV2/commit/429d441)
+- Update dotnet.yml [`414f3a4`](https://github.com/MACH2Simulations/PrinterAddV2/commit/414f3a4)
+- .net and versions bump [`edca7b5`](https://github.com/MACH2Simulations/PrinterAddV2/commit/edca7b5)
+- .net and version bump [`f87b222`](https://github.com/MACH2Simulations/PrinterAddV2/commit/f87b222)
+- Bump To Force Build attempt [`1a95dd8`](https://github.com/MACH2Simulations/PrinterAddV2/commit/1a95dd8)
+- Update .NET workflow for branch and version changes [`cf70883`](https://github.com/MACH2Simulations/PrinterAddV2/commit/cf70883)
+
+## 1.2.0.5 (2025-07-10)
+
+### Chore
+- :robot: changelog file generated [`ad5041a`](https://github.com/MACH2Simulations/PrinterAddV2/commit/ad5041a)
 - :robot: changelog file generated [`acccad1`](https://github.com/MACH2Simulations/PrinterAddV2/commit/acccad1)
 
 ### Other
+- Merge branch 'master' of https://github.com/MACH2Simulations/PrinterAddV2 [`618c917`](https://github.com/MACH2Simulations/PrinterAddV2/commit/618c917)
+- Increase Sleep after Deletion, Updated to .net 9 [`e50b738`](https://github.com/MACH2Simulations/PrinterAddV2/commit/e50b738)
+- Increase Sleep after Deletion [`6dc2870`](https://github.com/MACH2Simulations/PrinterAddV2/commit/6dc2870)
+- Fixed Version Numbering, Dependancy Updates & Bumps [`573e81e`](https://github.com/MACH2Simulations/PrinterAddV2/commit/573e81e)
+- Commit [`9bb63c0`](https://github.com/MACH2Simulations/PrinterAddV2/commit/9bb63c0)
+- Fixing [`ac7028b`](https://github.com/MACH2Simulations/PrinterAddV2/commit/ac7028b)
+- Bumps and Verision [`847a5d3`](https://github.com/MACH2Simulations/PrinterAddV2/commit/847a5d3)
 - Revert to 1.0 EXE, Docs Update and bump [`3dbcf9d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/3dbcf9d)
 - Automate CL [`22f82c4`](https://github.com/MACH2Simulations/PrinterAddV2/commit/22f82c4)
 
@@ -46,6 +69,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - readme update [`ceb7096`](https://github.com/MACH2Simulations/PrinterAddV2/commit/ceb7096)
 
 ## 1.0 (2024-06-07)
+
+## 0.0.7 (2025-07-10)
+
+### Chore
+- :robot: changelog file generated [`ad5041a`](https://github.com/MACH2Simulations/PrinterAddV2/commit/ad5041a)
+
+### Other
+- Merge branch 'master' of https://github.com/MACH2Simulations/PrinterAddV2 [`618c917`](https://github.com/MACH2Simulations/PrinterAddV2/commit/618c917)
+- Increase Sleep after Deletion, Updated to .net 9 [`e50b738`](https://github.com/MACH2Simulations/PrinterAddV2/commit/e50b738)
+- Increase Sleep after Deletion [`6dc2870`](https://github.com/MACH2Simulations/PrinterAddV2/commit/6dc2870)
+- Fixed Version Numbering, Dependancy Updates & Bumps [`573e81e`](https://github.com/MACH2Simulations/PrinterAddV2/commit/573e81e)
+- Commit [`9bb63c0`](https://github.com/MACH2Simulations/PrinterAddV2/commit/9bb63c0)
+- Fixing [`ac7028b`](https://github.com/MACH2Simulations/PrinterAddV2/commit/ac7028b)
+- Bumps and Verision [`847a5d3`](https://github.com/MACH2Simulations/PrinterAddV2/commit/847a5d3)
 
 ## 0.0.6 (2025-07-09)
 
