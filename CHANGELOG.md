@@ -7,11 +7,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased changes
 
 ### Chore
+- :robot: changelog file generated [`17151c7`](https://github.com/MACH2Simulations/PrinterAddV2/commit/17151c7)
 - :robot: changelog file generated [`5f469f5`](https://github.com/MACH2Simulations/PrinterAddV2/commit/5f469f5)
 - :robot: changelog file generated [`bfa4db7`](https://github.com/MACH2Simulations/PrinterAddV2/commit/bfa4db7)
 - :robot: changelog file generated [`57ea38c`](https://github.com/MACH2Simulations/PrinterAddV2/commit/57ea38c)
 
 ### Other
+- Might need a full rebuild [`e5d7818`](https://github.com/MACH2Simulations/PrinterAddV2/commit/e5d7818)
+- think i need to fully rebuild this [`7eaa372`](https://github.com/MACH2Simulations/PrinterAddV2/commit/7eaa372)
+- Cleaning [`4fe63c0`](https://github.com/MACH2Simulations/PrinterAddV2/commit/4fe63c0)
 - Create changelog.yml [`429d441`](https://github.com/MACH2Simulations/PrinterAddV2/commit/429d441)
 - Update dotnet.yml [`414f3a4`](https://github.com/MACH2Simulations/PrinterAddV2/commit/414f3a4)
 - .net and versions bump [`edca7b5`](https://github.com/MACH2Simulations/PrinterAddV2/commit/edca7b5)
