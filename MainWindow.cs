@@ -70,9 +70,6 @@ namespace PrinterAddV2
                     this.BackColor = Color.FromArgb(30, 30, 30);
                     MainProgressIndicator.BackColor = Color.White;
                     ProgressBarUpdate(20);
-
-
-
                     this.WindowState = System.Windows.Forms.FormWindowState.Normal;
                     this.ShowInTaskbar = true;
 
@@ -85,7 +82,10 @@ namespace PrinterAddV2
 
                     StatusText.Refresh();
                     StatusText.Text = "Dark Mode";
+                    Console.ReadLine();
                     StatusText.Text = "Dark Mode";
+
+
 
                 }
             }

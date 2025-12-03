@@ -2,7 +2,8 @@
   "profiles": {
     "PrinterAddV2": {
       "commandName": "Project",
-      "commandLineArgs": "\"/s m2s-print1\" \"/p Office-Mono Office-Colour Reception-Direct\" \"/t 10\" /dark"
+      "commandLineArgs": "\"/s m2s-print1\" \"/p Office-Mono Office-Colour Reception-Direct\" \"/t 10\" /dark",
+      "hotReloadEnabled": false
     }
   }
 }
