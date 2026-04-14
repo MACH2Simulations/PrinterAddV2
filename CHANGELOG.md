@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased changes
 
 ### Chore
+- :robot: changelog file generated [`d198f34`](https://github.com/MACH2Simulations/PrinterAddV2/commit/d198f34)
+
+## v0.0.1 (2026-04-14)
+
+### Chore
 - :robot: changelog file generated [`07063ef`](https://github.com/MACH2Simulations/PrinterAddV2/commit/07063ef)
 - :robot: changelog file generated [`17151c7`](https://github.com/MACH2Simulations/PrinterAddV2/commit/17151c7)
 - :robot: changelog file generated [`5f469f5`](https://github.com/MACH2Simulations/PrinterAddV2/commit/5f469f5)
