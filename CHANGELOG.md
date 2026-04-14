@@ -4,9 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-## Unreleased changes
+## v1.2.7-refs-tags-v1-2-6.0 (2026-04-14)
+
+## v1.2.6 (2026-04-14)
 
 ### Chore
+- :robot: changelog file generated [`c7657f1`](https://github.com/MACH2Simulations/PrinterAddV2/commit/c7657f1)
 - :robot: changelog file generated [`d198f34`](https://github.com/MACH2Simulations/PrinterAddV2/commit/d198f34)
 
 ## v0.0.1 (2026-04-14)
