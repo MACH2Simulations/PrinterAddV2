@@ -30,13 +30,13 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release
+      run: dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained true 
     - name: Uploading artifacts
       uses: actions/upload-artifact@v4
       id: artifact-upload-step
       with:
         name: MACHSPrintStatusTool
-        path: bin/Release/net10.0-windows10.0.26100.0
+        path: bin/Release/net10.0-windows10.0.26100.0/win-x64/publish
         overwrite: true
         if-no-files-found: error
     - name: Output artifact ID
@@ -49,7 +49,7 @@ jobs:
     - name: Zip Files
       uses: vimtor/action-zip@v1.2
       with:
-         files: bin/Release/net10.0-windows10.0.26100.0
+         files: bin/Release/net10.0-windows10.0.26100.0/win-x64/publish
          dest: out/MACHSPrintStatusTool_${{ steps.tag_version.outputs.new_tag }}.zip
        
     - name: Release

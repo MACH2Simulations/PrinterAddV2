@@ -23,10 +23,10 @@
     <StartupObject>PrinterAddV2.Program</StartupObject>
     <UseWPF>False</UseWPF>
     <Company>MACH 2 Simulations</Company>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PlatformTarget>x64</PlatformTarget>
     <Nullable>disable</Nullable>
-    <Version>1.2.6</Version>
+	<VersionPrefix>1.2.8</VersionPrefix>
     <PackageProjectUrl>https://docs.m2s.uk/docs/printeradder/</PackageProjectUrl>
     <PackageIcon>icons8-print-100-9.png</PackageIcon>
     <Copyright>MACH 2 Simulations LTD 2024 - 2026</Copyright>
@@ -44,6 +44,12 @@
     <NuGetAuditMode>direct</NuGetAuditMode>
     <NuGetAuditLevel>critical</NuGetAuditLevel>
     <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="icons8-print-100.ico" />
