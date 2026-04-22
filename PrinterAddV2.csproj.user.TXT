@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>"/s DNTVA-PRT0001" "/p DNTVA-ICT-Direct DNTVA-ICT-DIRECT-COLOUR DNTVA-MONO DNTVA-TECH-DIRECT DNTVA-TECH-DIRECT-COLOUR" "/t 2"</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <InstallUrlHistory />
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <_LastSelectedProfileId>C:\Scripts\GitHub\PrinterAddV2\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartArguments>"/s DNTVA-PRT0001" "/p DNTVA-ICT-Direct DNTVA-ICT-DIRECT-COLOUR DNTVA-MONO DNTVA-TECH-DIRECT DNTVA-TECH-DIRECT-COLOUR" "/t 10"</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='2|AnyCPU'">
+    <StartArguments>"/s DNTVA-PRT0001" "/p DNTVA-ICT-Direct DNTVA-ICT-DIRECT-COLOUR DNTVA-MONO DNTVA-TECH-DIRECT DNTVA-TECH-DIRECT-COLOUR" "/t 10"</StartArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="MainWindow.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
