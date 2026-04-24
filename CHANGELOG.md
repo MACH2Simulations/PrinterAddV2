@@ -7,10 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased changes
 
 ### Chore
+- :robot: changelog file generated [`d0a730e`](https://github.com/MACH2Simulations/PrinterAddV2/commit/d0a730e)
 - :robot: changelog file generated [`b1ec4db`](https://github.com/MACH2Simulations/PrinterAddV2/commit/b1ec4db)
 - :robot: changelog file generated [`36cd498`](https://github.com/MACH2Simulations/PrinterAddV2/commit/36cd498)
 
 ### Other
+- Delete .github/workflows/main.yml [`678d1b3`](https://github.com/MACH2Simulations/PrinterAddV2/commit/678d1b3)
 - Rename and update artifact handling in build workflow [`0aefd3a`](https://github.com/MACH2Simulations/PrinterAddV2/commit/0aefd3a)
 - Fixed Metadata stuff [`4ca500d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/4ca500d)
 
