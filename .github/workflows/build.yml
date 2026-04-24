@@ -142,6 +142,6 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           dotnet_format: true
-          dotnet_format_args: 'SnipeOrchastrator.sln'
+          dotnet_format_args: 'PrinterAddV2.sln'
           auto_fix: true
 
