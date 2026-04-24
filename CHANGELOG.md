@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.2.15 (2026-04-24)
+
+### Other
+- Update dotnet_format_args in build.yml [`cb56a90`](https://github.com/MACH2Simulations/PrinterAddV2/commit/cb56a90)
+
 ## v1.2.14 (2026-04-24)
 
 ### Other
