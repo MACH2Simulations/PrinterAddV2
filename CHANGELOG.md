@@ -4,36 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## v1.2.13 (2026-04-24)
+
+### Other
+- Various CI Improvements [`ab9770d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/ab9770d)
+
 ## v1.2.12 (2026-04-24)
 
 ### Other
 - Add changelog generation and commit step [`8467849`](https://github.com/MACH2Simulations/PrinterAddV2/commit/8467849)
-
-## v1.2.11 (2026-04-24)
-
-### Other
 - Refactor build workflow with artifact management [`6b3a8b7`](https://github.com/MACH2Simulations/PrinterAddV2/commit/6b3a8b7)
-
-## v1.2.10 (2026-04-24)
-
-## v1.2.9 (2026-04-24)
-
-### Other
 - Enhance build workflow with Azure signing [`01d1414`](https://github.com/MACH2Simulations/PrinterAddV2/commit/01d1414)
-
-## v1.2.8 (2026-04-24)
-
-### Other
 - Update changelog generator action in workflow [`a6428a9`](https://github.com/MACH2Simulations/PrinterAddV2/commit/a6428a9)
 - Delete .github/workflows/main.yml [`678d1b3`](https://github.com/MACH2Simulations/PrinterAddV2/commit/678d1b3)
 - Rename and update artifact handling in build workflow [`0aefd3a`](https://github.com/MACH2Simulations/PrinterAddV2/commit/0aefd3a)
-- Fixed Metadata stuff [`4ca500d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/4ca500d)
-
-## v1.2.7-refs-tags-v1-2-6.0 (2026-04-14)
-
-## v1.2.7 (2026-04-22)
-
-### Other
 - Fixed Metadata stuff [`4ca500d`](https://github.com/MACH2Simulations/PrinterAddV2/commit/4ca500d)
 
 ## v1.2.6 (2026-04-14)
