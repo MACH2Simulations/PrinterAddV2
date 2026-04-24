@@ -126,3 +126,22 @@ jobs:
         git add 'CHANGELOG.md'
         git commit -m "chore: :robot: changelog file generated" || echo "No changes to commit"
         git push
+  run-linters:
+    needs: changelog
+    name: Run linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "10.0.x"
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          dotnet_format: true
+          dotnet_format_args: 'SnipeOrchastrator.sln'
+          auto_fix: true
+
