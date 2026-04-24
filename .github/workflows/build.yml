@@ -87,13 +87,11 @@ jobs:
           file-digest: SHA256
           timestamp-rfc3161: http://timestamp.acs.microsoft.com
           timestamp-digest: SHA256      
-
       - name: Zip Files
         uses: vimtor/action-zip@v1.2
         with:
-          files: out/*
+          files: out/
           dest: out/PrinterAddV2_${{ needs.build.outputs.new_tag }}.zip
-        
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -103,3 +101,28 @@ jobs:
           body: ${{ needs.build.outputs.changelog }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  changelog:
+    name: Create and Commit Changelog
+    needs: sign_and_release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Generate Changelog
+      uses: MACH-2-Simulations/changelog_nochores@2.0.0
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set Git User Info
+      run: |
+        git config user.name 'GitHub Actions Bot'
+        git config user.email 'actions@github.com'
+
+    - name: Commit Changelog
+      run: |
+        git add 'CHANGELOG.md'
+        git commit -m "chore: :robot: changelog file generated" || echo "No changes to commit"
+        git push
